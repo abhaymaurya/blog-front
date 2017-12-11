@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Unleash your thoughts!</h1>
+    <form  (ngSubmit)="showConfirmArticle()" #articleForm="ngForm">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" minlength="10" required [(ngModel)]="article.title" #articleTitle="ngModel">
+        </div>
+        <div *ngIf="articleTitle.invalid && (articleTitle.dirty || articleTitle.touched)" class="alert alert-danger">
+            <div *ngIf="articleTitle.errors.required">
+                Title is required.
+            </div>
+            <div *ngIf="articleTitle.errors.minlength">
+                Title must be at least 10 characters long.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <app-file-upload-button [file]="articleImage" fileType="image" require=false (notify)="onNotify($event)"></app-file-upload-button>
+        </div>
+
+        <div class="form-group">
+            <label for="article">Article</label>
+            <textarea class="form-control" id="article" name="article" required [(ngModel)]="article.text" #articleText="ngModel"></textarea>
+        </div>
+        <div *ngIf="articleText.invalid && (articleText.dirty || articleText.touched)" class="alert alert-danger">
+            Article is required
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!articleForm.form.valid">Submit</button>
+    </form>
+</div>

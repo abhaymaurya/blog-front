@@ -1,0 +1,8 @@
+<fieldset ngModelGroup="file">
+    <img class="upload-image-preview" *ngIf="url" [src]="url">
+    <label for="articleImage">Upload {{fileType}}</label>
+    <div class="file-container">
+        <input appFileUploadButton [(ngModel)]="file" id="file" type="file" class="form-control" class="file" name="file" [required]="require" (change)="emitValue()" (notify)="onNotify($event)">
+        <button class="file-button" name="file-button">Choose {{fileType}}</button>
+    </div>
+</fieldset>

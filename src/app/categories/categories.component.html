@@ -1,0 +1,4 @@
+<div>Choose a Catagory & start to {{action}}</div>
+<div *ngFor="let category of categories">
+    <a routerLink="/{{action}}/{{category.name.toLowerCase()}}">{{category.name}}</a>
+</div>

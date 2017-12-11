@@ -1,0 +1,4 @@
+<div *ngFor="let heading of headings">
+    <div class="heading" [class.selected]="heading===selectedHeading" (click)="select(heading)">{{heading.name}}</div>
+</div>
+<app-heading-description [heading]="selectedHeading"></app-heading-description>

@@ -1,0 +1,8 @@
+how you reference with: './'
+how you define datatype: variable: datatype;
+indentation always 4 space
+we use get, save or update prefix to define the nature of the function
+always make a variable same like service but camelCase to use service functions
+always define all variables like name, id etc in your html as camelCase
+always bing angular right after html tag name like: <input [(ngModel)]="bla" />
+always address css with its class name

@@ -1,0 +1,6 @@
+.heading{
+    cursor: pointer;
+}
+.heading.selected{
+    color:red;
+}
