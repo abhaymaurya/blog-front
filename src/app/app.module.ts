@@ -28,6 +28,13 @@ import { WriteArticleComponent } from './forms/write-article/write-article.compo
 import { FileUploadButtonDirective } from './directives/file-upload-button/file-upload-button.directive';
 import { FileUploadButtonComponent } from './helpers/file-upload-button/file-upload-button.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { HeaderComponent } from './header/header.component';
+import { FormLabelComponent } from './form-label/form-label.component';
+import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,14 +52,21 @@ import { LoginComponent } from './login/login.component';
     WriteArticleComponent,
     FileUploadButtonDirective,
     FileUploadButtonComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent,
+    HeaderComponent,
+    FormLabelComponent,
+    Dashboard2Component,
+    UserListComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CategoriesService,

@@ -1,0 +1,16 @@
+<app-header login=true></app-header>
+<app-form-label title="User List"></app-form-label>
+<div class="user-list">
+    <input type="text" placeholder="search by name">
+    <ul *ngFor="let user of users">
+        <li>
+            <div class="user-list-text">{{user.name}}</div>
+            <div class="user-list-icons">
+                <img *ngIf="user.state==='inactive'" (click)="user.state='active'" src="assets/pencil.svg" />
+                <img *ngIf="user.state==='active'" (click)="user.state='inactive'" src="assets/cancel.png" />
+                <img src="assets/delete.png" />
+            </div>
+        </li>
+        <app-user-edit [@userState]="user.state" *ngIf="user.state==='active'" [user]=user ></app-user-edit>
+    </ul>
+</div>

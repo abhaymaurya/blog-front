@@ -1,19 +1,22 @@
-<form  (ngSubmit)="login()" #loginForm="ngForm">
-    <div class="form-group">
+<app-header></app-header>
+<app-form-label title="Login Form"></app-form-label>
+<form (ngSubmit)="signUp()" #signUpForm="ngForm">
+    <div>
         <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" name="email" placeholder="your email address" required [(ngModel)]="email" #_email="ngModel" email>
+        <input class="field" type="text" id="email" name="email" placeholder="your email address" required [(ngModel)]="email" #_email="ngModel" email>
+        <div class="info" *ngIf="_email.invalid && (_email.dirty || _email.touched)">
+            Email is required
+        </div>
     </div>
-    <div *ngIf="_email.invalid && (_email.dirty || _email.touched)" class="alert alert-danger">
-        Email is required
-    </div>
-
-    <div class="form-group">
+    
+    <div>
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="your password" required [(ngModel)]="password" #_password="ngModel">
-    </div>
-    <div *ngIf="_password.invalid && (_password.dirty || _password.touched)" class="alert alert-danger">
-        Password is required
+        <input class="field" type="password" id="password" name="password" placeholder="your password" minlength=8 required [(ngModel)]="password" #_password="ngModel">
+        <div class="info" *ngIf="_password.invalid && (_password.dirty || _password.touched)">
+            Password is required
+        </div>
     </div>
 
-    <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Submit</button>
+    <input routerLink="/dashboard2" type="submit" value="Submit" [disabled]="!signUpForm.form.valid">
 </form>
+<div class="question">Don't have an account? <a routerLink="/sign-up">Sign Up</a></div>
